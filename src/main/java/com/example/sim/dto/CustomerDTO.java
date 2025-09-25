@@ -1,19 +1,30 @@
 package com.example.sim.dto;
 
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 
 public class CustomerDTO {
 	
+	@NotBlank(message= "{customer.name.notblank}")
 	private String name;
 	
+	@NotBlank(message= "{customer.dob.notblank}")
 	private String dob;
 	
+	@NotBlank(message = "{customer.aadhar.notblank}")
+	@Size(min = 12, max = 12, message ="{customer.aadhar.size}")
 	private String aadhar;
 	
+	@NotBlank(message= "{customer.address.notblank}")
 	private String address;
 	
+	@NotBlank(message= "{customer.phone.notblank}")
+	@Pattern(regexp= "^[6-9][0-9]{9}$", message="{customer.phone.invalid}")
 	private String phoneNumber;
 	
+	@NotBlank(message= "{customer.father.notblank}")
 	private String fatherName;
 	
 	@Valid

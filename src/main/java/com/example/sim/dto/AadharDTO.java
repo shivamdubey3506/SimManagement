@@ -1,7 +1,12 @@
 package com.example.sim.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
 public class AadharDTO {
 	
+	@NotBlank(message ="{customer.aadhar.notblank}")
+	@Size(min=12, max=12, message="{customer .aadhar.size}")
 	private String aadhar;
 	
 	
