@@ -23,7 +23,9 @@ public class CustomerController {
 	@PostMapping("/activate")
 	public ResponseEntity<String> activateSIM (@RequestBody @Valid ActivateDTO activateDTO){
 		String message = customerService.activateSIM(activateDTO);
+		System.out.println("this is my project");
 		return ResponseEntity.ok(message);	
+		
 		
 	}
 	
