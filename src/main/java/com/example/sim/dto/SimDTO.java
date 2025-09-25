@@ -1,7 +1,12 @@
 package com.example.sim.dto;
 
-public class SimDTO {
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
+public class SimDTO {
+	
+    @NotBlank(message= "{sim.number.notblank}")
+    @Size(min = 10, max = 16, message="{sim.number.size}")
 	private String simNumber;
 	
 	private String status;
