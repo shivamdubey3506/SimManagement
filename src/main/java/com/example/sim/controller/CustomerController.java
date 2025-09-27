@@ -26,7 +26,7 @@ public class CustomerController {
 		String message = customerService.activateSIM(activateDTO);
 		return ResponseEntity.ok(message);	
 		
-		
+	//this is shivam controller	
 	}
 	
 	    @PostMapping("/byaadhar")
