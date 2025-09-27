@@ -13,7 +13,6 @@ import com.example.sim.dto.CustomerDTO;
 import com.example.sim.service.CustomerService;
 import jakarta.validation.Valid;
 
-//this is  project
 @RestController
 @RequestMapping("/customer")
 public class CustomerController {
@@ -26,8 +25,8 @@ public class CustomerController {
 		String message = customerService.activateSIM(activateDTO);
 		return ResponseEntity.ok(message);	
 		
-	//this is shivam controller	
-	}
+		
+	}//This is contoller class
 	
 	    @PostMapping("/byaadhar")
 		public ResponseEntity<?> getCustomerByAadhar (@RequestBody  @Valid AadharDTO aadharDTO){
