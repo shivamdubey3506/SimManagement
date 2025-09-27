@@ -13,6 +13,7 @@ import com.example.sim.dto.CustomerDTO;
 import com.example.sim.service.CustomerService;
 import jakarta.validation.Valid;
 
+//this is  project
 @RestController
 @RequestMapping("/customer")
 public class CustomerController {
