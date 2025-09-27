@@ -26,7 +26,7 @@ public class CustomerController {
 		return ResponseEntity.ok(message);	
 		
 		
-	}
+	}//This is contoller class
 	
 	    @PostMapping("/byaadhar")
 		public ResponseEntity<?> getCustomerByAadhar (@RequestBody  @Valid AadharDTO aadharDTO){
