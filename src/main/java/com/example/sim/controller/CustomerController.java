@@ -24,9 +24,8 @@ public class CustomerController {
 	public ResponseEntity<String> activateSIM (@RequestBody @Valid ActivateDTO activateDTO){
 		String message = customerService.activateSIM(activateDTO);
 		return ResponseEntity.ok(message);	
-		
-		
-	}//This is contoller class
+			
+	}
 	
 	    @PostMapping("/byaadhar")
 		public ResponseEntity<?> getCustomerByAadhar (@RequestBody  @Valid AadharDTO aadharDTO){

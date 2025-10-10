@@ -5,7 +5,7 @@ import java.util.List;
 import com.example.sim.dto.ActivateDTO;
 import com.example.sim.dto.CustomerDTO;
 
-import jakarta.validation.Valid;
+import jakarta.validation.Valid;  
 
 public interface CustomerService {
 
@@ -14,5 +14,7 @@ public interface CustomerService {
 	 List<CustomerDTO> getCustomersByAadhar(String aadhar);
 
 	 String deActivateSIM(@Valid ActivateDTO activateDTO);
+
+	 boolean validateAadhaarAndDob(String aadhar, String dob);
 
 }

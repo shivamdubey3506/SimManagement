@@ -124,4 +124,19 @@ public class CustomerServiceImpl implements CustomerService{
 		return "Activation failed.Details do not match";
 	}
 
+
+
+	@Override
+	public boolean validateAadhaarAndDob(String aadhar, String dob) {
+		
+	 Optional<Customer> optional=customerRepository.findByAadharAndDob(aadhar, dob);
+	 
+	 if(optional.isPresent()) {
+		return true;
+		
+	}
+	 return false;
+
+	
+	}
 }

@@ -7,12 +7,12 @@ import com.example.sim.model.Customer;
 
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
-	   Optional<Customer> findByAadharAndPhoneNumberAndDob(String aadhar, String phoneNumber, String dob);
-		
-		
-			
+     Optional<Customer> findByAadharAndPhoneNumberAndDob(String aadhar, String phoneNumber, String dob);
+				
 	 Optional<Customer> findByPhoneNumber(String phoneNumber);
 
 	 List<Customer> findByAadhar(String aadhar);
+
+	 Optional<Customer> findByAadharAndDob(String aadhar, String dob);
 
 }

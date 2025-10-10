@@ -74,7 +74,6 @@ public class Customer {
 	public void setFatherName(String fatherName) {
 		this.fatherName = fatherName;
 	}
-	
 
 	
 
