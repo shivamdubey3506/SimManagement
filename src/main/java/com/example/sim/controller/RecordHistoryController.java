@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.sim.dto.PhoneNumberDTO;
 import com.example.sim.model.RecordHistory;
 import com.example.sim.service.RecordHistoryService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 
 @RestController
@@ -21,6 +22,7 @@ public class RecordHistoryController {
 	private RecordHistoryService recordHistoryService;
 
 	
+    @Operation(summary = "Get record history by phone number")
 	@PostMapping("/phonenumber")
 	public ResponseEntity<?> getRecordHistoryByPhoneNumber(@RequestBody @Valid PhoneNumberDTO phoneNumberDTO){
 		List<RecordHistory> list=recordHistoryService.getByPhoneNumber(phoneNumberDTO);
@@ -30,6 +32,7 @@ public class RecordHistoryController {
 		return ResponseEntity.ok(list);
 	}
 	
+    @Operation(summary = "Get all record history")
 	@GetMapping("/all")
 	public ResponseEntity<?> getAllRecordHistory(){
 		List<RecordHistory> list=recordHistoryService.getAllHistory();

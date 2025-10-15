@@ -1,4 +1,4 @@
-package com.example.sim.dto.test;
+package com.example.sim.dto;
 
 import jakarta.validation.*;
 import org.junit.jupiter.api.*;

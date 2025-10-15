@@ -1,4 +1,3 @@
-
 package com.example.sim.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +8,7 @@ import com.example.sim.dto.AuthRequestDTO;
 import com.example.sim.dto.AuthResponseDTO;
 import com.example.sim.service.CustomerService;
 import com.example.sim.utility.JwtUtil;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 
 @RestController
@@ -22,6 +22,7 @@ public class AuthController {
     private CustomerService customerService;
     
 
+    @Operation(summary = "Authenticate user and return JWT token")
     @PostMapping("/login")
     public ResponseEntity<?> authenticate(@RequestBody @Valid AuthRequestDTO authRequestDTO){
     	

@@ -1,4 +1,4 @@
-package com.example.sim.model.test;
+package com.example.sim.model;
 
 import org.junit.jupiter.api.Test;
 

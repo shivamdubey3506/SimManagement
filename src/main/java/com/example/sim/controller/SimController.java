@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.sim.dto.CustomerDTO;
 
 import com.example.sim.service.SimService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 
 @RestController
@@ -22,12 +23,14 @@ public class SimController {
 	private SimService simService;
 	
 	
+    @Operation(summary = "Register a new SIM for a customer")
 	@PostMapping("/register")
 	public ResponseEntity<String> registerSIM (@RequestBody @Valid CustomerDTO customerDTO){
 		String message= simService.registerSIM(customerDTO);
 		return ResponseEntity.ok(message);
 	}
 	
+    @Operation(summary = "Get all customers")
 	@GetMapping("/")
 	public ResponseEntity<?> getAllCustomers() {
 	List<CustomerDTO> list = simService.getAllCustomers();

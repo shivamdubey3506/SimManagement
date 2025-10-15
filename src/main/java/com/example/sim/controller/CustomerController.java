@@ -11,6 +11,7 @@ import com.example.sim.dto.AadharDTO;
 import com.example.sim.dto.ActivateDTO;
 import com.example.sim.dto.CustomerDTO;
 import com.example.sim.service.CustomerService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 
 @RestController
@@ -20,6 +21,7 @@ public class CustomerController {
 	@Autowired
 	private CustomerService customerService;
 	
+	@Operation(summary = "Activate a SIM for a customer")
 	@PostMapping("/activate")
 	public ResponseEntity<String> activateSIM (@RequestBody @Valid ActivateDTO activateDTO){
 		String message = customerService.activateSIM(activateDTO);
@@ -27,8 +29,9 @@ public class CustomerController {
 			
 	}
 	
-	    @PostMapping("/byaadhar")
-		public ResponseEntity<?> getCustomerByAadhar (@RequestBody  @Valid AadharDTO aadharDTO){
+	@Operation(summary = "Get customer(s) by Aadhar number")
+    @PostMapping("/byaadhar")
+    public ResponseEntity<?> getCustomerByAadhar (@RequestBody  @Valid AadharDTO aadharDTO){
 			List<CustomerDTO> list = customerService.getCustomersByAadhar(aadharDTO.getAadhar());
 			if(list.isEmpty()) {
 				return ResponseEntity.ok().body("No Record Found");
@@ -36,8 +39,9 @@ public class CustomerController {
 		return ResponseEntity.ok(list);
 	}
 	
-	    @PostMapping("/deactivate")
-	    public ResponseEntity<String> deActivateSIM(@RequestBody @Valid ActivateDTO activateDTO){
+	@Operation(summary = "Deactivate a SIM for a customer")
+    @PostMapping("/deactivate")
+    public ResponseEntity<String> deActivateSIM(@RequestBody @Valid ActivateDTO activateDTO){
 	    	String message = customerService.deActivateSIM(activateDTO);
 	    	return ResponseEntity.ok(message);
 	    }

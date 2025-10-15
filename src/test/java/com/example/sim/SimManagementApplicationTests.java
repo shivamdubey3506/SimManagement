@@ -10,4 +10,10 @@ class SimManagementApplicationTest {
     void contextLoads() {
         // This test ensures that the Spring application context loads without errors.
     }
+
+    @Test
+    void mainMethodRuns() {
+        SimManagementApplication.main(new String[]{});
+        // This test ensures that the main method runs without exceptions.
+    }
 }

@@ -1,4 +1,4 @@
-package com.example.sim.service.test;
+package com.example.sim.service.impl;
 
 
 import com.example.sim.dto.ActivateDTO;
